@@ -8,7 +8,7 @@
 ## Requirements  
 - **jo_libs v2.4.2**
   → [Download jo_libs v2.4.2](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/tag/v2.4.2)  
-- Compatible framework (QBCore / VORP / RedEM-RP, etc.)  
+- Compatible framework (ALL FRAMEWORK)  
 
 - **Edit your `server.cfg`**
    ensure jo_libs
