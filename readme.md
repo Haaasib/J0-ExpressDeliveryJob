@@ -2,10 +2,10 @@
 
 ## Showcase
 - **Youtube**
-  → [Click To View](https://youtu.be/ijCOzSA4ifs)  
+[![Watch the video](https://img.youtube.com/vi/ijCOzSA4ifs/maxresdefault.jpg)](https://youtu.be/ijCOzSA4ifs)
 
-https://i.ibb.co.com/d4Q6PdTP/HASIB-VAI.png
-  
+![HASIB VAI](https://i.ibb.co.com/d4Q6PdTP/HASIB-VAI.png)
+
 ## Requirements  
 - **jo_libs v2.4.2**
   → [Download jo_libs v2.4.2](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/tag/v2.4.2)  
