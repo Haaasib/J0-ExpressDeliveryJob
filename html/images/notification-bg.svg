@@ -1,0 +1,31 @@
+<svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="notificationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD08E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#866537;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="errorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F44336;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C62828;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="notificationPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="rgba(255,255,255,0.05)"/>
+      <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background with pattern -->
+  <rect width="400" height="80" fill="url(#notificationPattern)"/>
+  
+  <!-- Border frame -->
+  <rect x="2" y="2" width="396" height="76" fill="none" stroke="url(#notificationGradient)" stroke-width="2" rx="8"/>
+  
+  <!-- Inner glow effect -->
+  <rect x="4" y="4" width="392" height="72" fill="none" stroke="rgba(255,208,142,0.3)" stroke-width="1" rx="6"/>
+</svg>
+
+

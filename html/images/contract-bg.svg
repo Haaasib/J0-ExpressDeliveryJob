@@ -1,0 +1,31 @@
+<svg width="350" height="200" viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="contractGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(0,0,0,0.8);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(20,20,20,0.9);stop-opacity:1" />
+    </linearGradient>
+    <pattern id="contractPattern" patternUnits="userSpaceOnUse" width="30" height="30">
+      <rect width="30" height="30" fill="rgba(255,255,255,0.02)"/>
+      <path d="M15,0 L30,15 L15,30 L0,15 Z" fill="rgba(255,208,142,0.05)" opacity="0.3"/>
+    </pattern>
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD08E;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#FFD08E;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#866537;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background with pattern -->
+  <rect width="350" height="200" fill="url(#contractPattern)"/>
+  
+  <!-- Main background -->
+  <rect width="350" height="200" fill="url(#contractGradient)" rx="15"/>
+  
+  <!-- Border -->
+  <rect x="2" y="2" width="346" height="196" fill="none" stroke="url(#borderGradient)" stroke-width="2" rx="13"/>
+  
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="350" height="3" fill="url(#borderGradient)" rx="15"/>
+</svg>
+
+

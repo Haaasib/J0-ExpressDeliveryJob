@@ -1,0 +1,1472 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    overflow: hidden;
+}
+
+.container {
+  display: none;
+}
+
+.background-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.headline-image {
+  position: absolute;
+  top: 12%;
+  left:5%;
+}
+
+.headline-text {
+  position: absolute;
+  top: 15%;
+  left: 8.5%;
+  font-size: 45px;
+  font-family: 'Chinese Rocks Rg', sans-serif;
+background: radial-gradient(104.82% 104.82% at 50.24% 0%, #FFD08E 0%, #866537 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+
+}
+
+.profile {
+    position: absolute;
+    top: 12%;
+    right: 5%;
+}
+
+.my-name {
+    position: absolute;
+    top: 13%;
+    right: 10.5%;
+    color: #ffff;
+    font-size: 22px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+}
+
+.progress-container {
+    position: absolute;
+    top: 18%;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD08E 0%, #866537 100%);
+    box-shadow: 0 0 10px rgba(255, 208, 142, 0.5);
+}
+
+.level-display {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 208, 142, 0.5);
+    min-width: 60px;
+}
+
+.contracts-section {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    right: 5%;
+    max-height: 70vh;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.contracts-title {
+    font-family: 'Chinese Rocks Rg', sans-serif;
+    font-size: 32px;
+    color: #FFD08E;
+    text-shadow: 0 0 15px rgba(255, 208, 142, 0.7);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contracts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.contract-card {
+    background: url('images/contract-bg.svg') no-repeat center center;
+    background-size: cover;
+    border: 2px solid rgba(255, 208, 142, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contract-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0;
+}
+
+.contract-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contract-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.contract-difficulty {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.contract-difficulty.easy {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #ffffff;
+}
+
+.contract-difficulty.medium {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    color: #ffffff;
+}
+
+.contract-difficulty.hard {
+    background: linear-gradient(135deg, #F44336, #C62828);
+    color: #ffffff;
+}
+
+.contract-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.route-from, .route-to {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #FFD08E;
+    font-weight: 500;
+}
+
+.contract-route i {
+    color: #FFD08E;
+    font-size: 16px;
+}
+
+.contract-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.contract-reward, .contract-distance {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.contract-reward i, .contract-distance i {
+    color: #FFD08E;
+    font-size: 16px;
+}
+
+.contract-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.contract-time i {
+    color: #FFD08E;
+    font-size: 16px;
+}
+
+.contract-xp {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    border-radius: 12px;
+    padding: 4px 8px;
+    color: #FFD700;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.contract-xp i {
+    color: #FFD700;
+    font-size: 12px;
+}
+
+.accept-contract-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: url('images/headline.svg') no-repeat center center;
+    background-size: contain;
+    border: none;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accept-contract-btn:disabled {
+    background: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+.contracts-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contracts-section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.contracts-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FFD08E, #866537);
+    border-radius: 4px;
+}
+
+.contracts-section::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #866537, #FFD08E);
+}
+
+@media (max-width: 768px) {
+    .contracts-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .contracts-title {
+        font-size: 24px;
+    }
+    
+    .contract-card {
+        padding: 15px;
+    }
+    
+    .contract-name {
+        font-size: 18px;
+    }
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 0;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(100%) scale(0.9);
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.notification.success {
+    background: url('images/notification-bg.svg') no-repeat center center;
+    background-size: cover;
+    border-color: rgba(76, 175, 80, 0.6);
+}
+
+.notification.error {
+    background: url('images/notification-bg.svg') no-repeat center center;
+    background-size: cover;
+    border-color: rgba(244, 67, 54, 0.6);
+}
+
+.notification.info {
+    background: url('images/notification-bg.svg') no-repeat center center;
+    background-size: cover;
+    border-color: rgba(255, 208, 142, 0.6);
+}
+
+.notification::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD08E 0%, #866537 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+.notification.success::before {
+    background: linear-gradient(90deg, #4CAF50 0%, #2E7D32 100%);
+}
+
+.notification.error::before {
+    background: linear-gradient(90deg, #F44336 0%, #C62828 100%);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification-icon {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.notification-text {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.notification-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.notification-close:hover {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    z-index: 20;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 208, 142, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 208, 142, 0.2);
+    border-color: rgba(255, 208, 142, 0.6);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #FFD08E 0%, #866537 100%);
+    border-color: #FFD08E;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(255, 208, 142, 0.5);
+}
+
+.nav-btn i {
+    font-size: 16px;
+}
+
+.vintage-icon {
+    font-family: 'Times New Roman', serif;
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+}
+
+.vintage-dashboard::before { content: ""; }
+.vintage-user::before { content: ""; }
+.vintage-play::before { content: ""; }
+.vintage-star::before { content: ""; }
+.vintage-dollar::before { content: "$"; }
+.vintage-route::before { content: ""; }
+.vintage-clock::before { content: ""; }
+.vintage-arrow-right::before { content: ""; }
+.vintage-times::before { content: ""; }
+.vintage-plus::before { content: "+"; }
+.vintage-users::before { content: ""; }
+.vintage-check::before { content: ""; }
+.vintage-exclamation::before { content: "!"; }
+.vintage-info::before { content: ""; }
+.vintage-map-marker::before { content: ""; }
+.vintage-flag::before { content: ""; }
+
+/* Mission Setup Section - Modal */
+.mission-setup-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mission-setup-section.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mission-setup-content {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid rgba(255, 208, 142, 0.4);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.mission-setup-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD08E 0%, #866537 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid rgba(244, 67, 54, 0.4);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F44336;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background: rgba(244, 67, 54, 0.4);
+    border-color: #F44336;
+}
+
+.mission-setup-title {
+    font-family: 'Chinese Rocks Rg', sans-serif;
+    font-size: 28px;
+    color: #FFD08E;
+    text-shadow: 0 0 15px rgba(255, 208, 142, 0.7);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Mission Info Card */
+.mission-info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 208, 142, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.mission-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    color: #FFD08E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.mission-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mission-route {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #ffffff;
+}
+
+.mission-route .route-from,
+.mission-route .route-to {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.mission-route i {
+    color: #FFD08E;
+    font-size: 18px;
+}
+
+.mission-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.mission-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.mission-stat i {
+    color: #FFD08E;
+    font-size: 16px;
+}
+
+/* Friend Invitation System */
+.friend-invitation {
+    margin-bottom: 25px;
+}
+
+.invitation-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: #FFD08E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.friend-input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.friend-id-input {
+    flex: 1;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 208, 142, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+}
+
+.friend-id-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.friend-id-input:focus {
+    outline: none;
+    border-color: rgba(255, 208, 142, 0.6);
+}
+
+.add-friend-btn {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-friend-btn:hover {
+    background: linear-gradient(135deg, #2E7D32, #4CAF50);
+}
+
+.friends-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.friend-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 208, 142, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.friend-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+}
+
+.friend-info i {
+    color: #FFD08E;
+}
+
+.remove-friend-btn {
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    border-radius: 4px;
+    color: #F44336;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.remove-friend-btn:hover {
+    background: rgba(244, 67, 54, 0.4);
+    border-color: #F44336;
+}
+
+.friend-limit-info {
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.friend-count {
+    color: #FFD08E;
+    font-weight: bold;
+}
+
+/* Mission Actions */
+.mission-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cancel-mission-btn {
+    padding: 12px 25px;
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    border-radius: 8px;
+    color: #F44336;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cancel-mission-btn:hover {
+    background: rgba(244, 67, 54, 0.4);
+    border-color: #F44336;
+}
+
+.start-mission-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #FFD08E 0%, #866537 100%);
+    border: none;
+    border-radius: 8px;
+    color: #000000;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.start-mission-btn:hover {
+    background: linear-gradient(135deg, #866537 0%, #FFD08E 100%);
+}
+
+.active-mission-section {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 650px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.active-mission-content {
+    top: 10%;
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid rgba(255, 208, 142, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.active-mission-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD08E 0%, #866537 100%);
+    border-radius: 15px 15px 0 0;
+}
+
+.active-mission-title {
+    font-family: 'Chinese Rocks Rg', sans-serif;
+    font-size: 24px;
+    color: #FFD08E;
+    text-shadow: 0 0 15px rgba(255, 208, 142, 0.7);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Mission Status */
+.mission-status {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #4CAF50;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.status-indicator i {
+    font-size: 16px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.mission-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 208, 142, 0.2);
+    border: 1px solid rgba(255, 208, 142, 0.4);
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: #FFD08E;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.mission-timer i {
+    font-size: 14px;
+}
+
+.mission-timer.timer-warning {
+    background: rgba(255, 152, 0, 0.2);
+    border-color: rgba(255, 152, 0, 0.4);
+    color: #FF9800;
+    animation: timerPulse 1s infinite;
+}
+
+.mission-timer.timer-critical {
+    background: rgba(244, 67, 54, 0.2);
+    border-color: rgba(244, 67, 54, 0.4);
+    color: #F44336;
+    animation: timerPulse 0.5s infinite;
+}
+
+@keyframes timerPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Active Mission Card */
+.active-mission-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 208, 142, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.active-mission-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: #FFD08E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Mission Progress */
+.mission-progress {
+    margin-bottom: 15px;
+}
+
+.progress-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.progress-bar-large {
+    width: 100%;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill-large {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD08E 0%, #866537 100%);
+    border-radius: 6px;
+}
+
+.progress-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: #FFD08E;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Mission Route Active */
+.mission-route-active {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.route-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.route-point i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.start-point {
+    color: #4CAF50;
+}
+
+.end-point {
+    color: #FFD08E;
+}
+
+.route-location {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.route-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.route-arrow {
+    color: #FFD08E;
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+/* Mission Rewards Active */
+.mission-rewards-active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.reward-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 208, 142, 0.2);
+}
+
+.reward-item i {
+    font-size: 16px;
+    color: #FFD08E;
+}
+
+.reward-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reward-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Active Mission Actions */
+.active-mission-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.cancel-active-mission-btn {
+    padding: 12px 25px;
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    border-radius: 8px;
+    color: #F44336;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cancel-active-mission-btn:hover {
+    background: rgba(244, 67, 54, 0.4);
+    border-color: #F44336;
+}
+
+/* Mission Tips */
+.mission-tips {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 208, 142, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.tips-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #FFD08E;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tips-list li {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.tips-list li::before {
+    content: '•';
+    color: #FFD08E;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Profile Section */
+.profile-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    max-height: 60vh;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.profile-title {
+    font-family: 'Chinese Rocks Rg', sans-serif;
+    font-size: 32px;
+    color: #FFD08E;
+    text-shadow: 0 0 15px rgba(255, 208, 142, 0.7);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Level Circle */
+.level-circle-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.level-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD08E 0%, #866537 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 208, 142, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.level-number {
+    font-family: 'Chinese Rocks Rg', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1;
+}
+
+.level-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.xp-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.current-xp {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #FFD08E;
+    font-weight: bold;
+}
+
+.next-level {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Delivery Stats */
+.delivery-stats {
+    margin-bottom: 20px;
+}
+
+.stats-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    color: #FFD08E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stat-item {
+    background-image: url('images/headline.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 12px;
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Chinese Rocks Rg', sans-serif;
+    font-size: 18px;
+    color: #FFD08E;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.stat-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Recent Deliveries */
+.recent-deliveries {
+    margin-bottom: 10px;
+}
+
+.recent-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    color: #FFD08E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.deliveries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.delivery-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 208, 142, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delivery-item.failed {
+    background: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.delivery-item.no-deliveries {
+    background: rgba(128, 128, 128, 0.05);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    text-align: center;
+}
+
+.delivery-reward.failed {
+    color: #ff6b6b;
+}
+
+.delivery-status-icon {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.delivery-item.completed .delivery-status-icon {
+    color: #51cf66;
+}
+
+.delivery-item.failed .delivery-status-icon {
+    color: #ff6b6b;
+}
+
+.delivery-route {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #ffffff;
+}
+
+.delivery-route .from,
+.delivery-route .to {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.delivery-route i {
+    color: #FFD08E;
+    font-size: 12px;
+}
+
+.delivery-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+.delivery-reward {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.delivery-time {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Contract Actions */
+.contract-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accept-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.accept-option-btn {
+    flex: 1;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 208, 142, 0.3);
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.accept-option-btn:hover {
+    background: rgba(255, 208, 142, 0.2);
+    border-color: rgba(255, 208, 142, 0.6);
+}
+
+.invite-friend-btn:hover {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border-color: #4CAF50;
+}
+
+.do-alone-btn:hover {
+    background: linear-gradient(135deg, #FFD08E, #866537);
+    border-color: #FFD08E;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .navigation-buttons {
+        flex-direction: row;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    .profile-section {
+        width: 90%;
+        max-height: 70vh;
+    }
+    
+    .mission-setup-content {
+        width: 95%;
+        max-height: 90vh;
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .mission-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .friends-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-actions {
+        flex-direction: column;
+    }
+    
+    .active-mission-section {
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    .active-mission-content {
+        padding: 15px;
+    }
+    
+    .mission-route-active {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .route-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .mission-rewards-active {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .level-circle-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .delivery-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .delivery-details {
+        align-items: center;
+    }
+}
+
+.status-bar {
+    display: none;
+    position: absolute;
+    top: 75%;
+    right: 8%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.status-bar-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
