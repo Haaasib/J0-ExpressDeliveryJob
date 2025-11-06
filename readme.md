@@ -2,7 +2,7 @@
 
 ## Showcase
 - **Youtube**
-# [Click TO Open Youtube Video](https://youtu.be/ijCOzSA4ifs)
+# [https://youtu.be/ijCOzSA4ifs](https://youtu.be/ijCOzSA4ifs)
 [![Image](https://img.youtube.com/vi/ijCOzSA4ifs/maxresdefault.jpg)](https://youtu.be/ijCOzSA4ifs)
 
 ## Requirements  
