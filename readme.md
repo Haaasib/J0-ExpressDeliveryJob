@@ -2,9 +2,8 @@
 
 ## Showcase
 - **Youtube**
-[![Watch the video](https://img.youtube.com/vi/ijCOzSA4ifs/maxresdefault.jpg)](https://youtu.be/ijCOzSA4ifs)
-
-![HASIB VAI](https://i.ibb.co.com/d4Q6PdTP/HASIB-VAI.png)
+# [Click TO Open Youtube Video](https://youtu.be/ijCOzSA4ifs)
+[![Image](https://img.youtube.com/vi/ijCOzSA4ifs/maxresdefault.jpg)](https://youtu.be/ijCOzSA4ifs)
 
 ## Requirements  
 - **jo_libs v2.4.2**
