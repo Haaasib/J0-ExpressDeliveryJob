@@ -52,6 +52,7 @@ function updatePlayerStats(source, missionData, success)
     if not db[charId] then return false end
     local player = db[charId]
     if success then
+       jo.framework:addMoney(source,missionData.reward,0)
         player.missionsCompleted, player.totalDeliveries = player.missionsCompleted + 1, player.totalDeliveries + 1
         player.totalEarnings, player.xp = player.totalEarnings + missionData.reward, player.xp + missionData.xp
         table.insert(player.recentDeliveries, 1, {from = missionData.from, to = missionData.to, reward = missionData.reward, time = os.date("%Y-%m-%d %H:%M:%S"), status = "completed"})
